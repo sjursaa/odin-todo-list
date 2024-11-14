@@ -1,5 +1,6 @@
 import "./styles.css";
 import { TodoItem } from "./todo.js";
+import { Project } from "./project.js";
 
 const task1 = new TodoItem(
   "mow lawn",
@@ -13,7 +14,9 @@ const task2 = new TodoItem(
   "next week",
   "low",
 );
+const defaultProject = new Project("default", [task1, task2]);
 
 console.log("hello");
 console.log(task1);
 console.log(task2);
+console.log(defaultProject);
