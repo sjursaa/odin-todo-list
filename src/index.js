@@ -15,7 +15,13 @@ const task2 = new TodoItem(
   "next week",
   "low",
 );
-const defaultProject = new Project("default", [task1, task2]);
+const task3 = new TodoItem(
+  "mow lawn3",
+  "again but this time better",
+  "next year",
+  "low",
+);
+const defaultProject = new Project("default", [task1, task2, task3]);
 const project2 = new Project("project2", [task1, task2]);
 
 console.log("hello");
