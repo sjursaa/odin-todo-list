@@ -1,4 +1,4 @@
 export function Project(projectName, listOfTasks) {
-  this.projectName = projectName;
+  this.name = projectName;
   this.listOfTasks = listOfTasks;
 }
