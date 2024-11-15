@@ -54,5 +54,11 @@ use localStorage for now
 
 # TODO
 
-- TODO: set up initial webpack project, much like restaurant page
-- TODO: push repo to github
+# js filetree..
+
+project.js // project object containing todos
+todo.js // todo object
+
+index.js // main site index (all projects??) (indexview??/main.js)
+projectView.js // project view (individual focused project w/ todos)
+todoView.js // todo view (individual focused todo)
