@@ -11,18 +11,19 @@ export function ProjectPage(project) {
   console.log("elements dropping");
   let string;
   page.appendChild(h1);
-  // TODO: Fix so that each item in array is displayed
-  taskList.forEach((element) => {
-    string =
-      element.title + element.description + element.dueDate + element.priority;
-
-    p.innerText = string;
+  // TODO: Display contents in a table instead of as strings
+  for (let i = 0; i < taskList.length; i++) {
+    const element = taskList[i];
+    p.innerText += element.title;
+    p.innerText += " ";
+    p.innerText += element.description;
+    p.innerText += " ";
+    p.innerText += element.dueDate;
+    p.innerText += " ";
+    p.innerText += element.priority;
+    p.innerText += "\n";
     page.appendChild(p);
-    console.log(element.title);
-    console.log(element.description);
-    console.log(element.dueDate);
-    console.log(element.priority);
-  });
+  }
 
   console.log("appending stuff");
   console.log(this.project.name);
