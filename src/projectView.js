@@ -12,6 +12,10 @@ export function ProjectPage(project) {
   let string;
   page.appendChild(h1);
   // TODO: Display contents in a table instead of as strings
+  // TODO: Add ability to move todo to different project
+  // TODO: Add checkbutton to mark as complete
+  // TODO: Add ability to update priority (low/mid/high)
+  // TODO: Add ability to change dueDate
   for (let i = 0; i < taskList.length; i++) {
     const element = taskList[i];
     p.innerText += element.title;
