@@ -16,6 +16,7 @@ export function ProjectPage(project) {
   // TODO: Add checkbutton to mark as complete
   // TODO: Add ability to update priority (low/mid/high)
   // TODO: Add ability to change dueDate
+  // TODO: Add to click on a todo, for more details
   for (let i = 0; i < taskList.length; i++) {
     const element = taskList[i];
     p.innerText += element.title;
