@@ -32,4 +32,14 @@ console.log(defaultProject);
 console.log(defaultProject.name);
 console.log(defaultProject.listOfTasks);
 
-const projectPage = new ProjectPage(defaultProject);
+const currentProject = new ProjectPage(defaultProject);
+
+const todoButton = document.querySelector("#todo");
+todoButton.onclick = () => {
+  console.log("todoButton clicked");
+  const taskName = prompt("Please type ur shit");
+  console.log(taskName);
+  defaultProject.listOfTasks.push(new TodoItem(taskName));
+  console.log(defaultProject.listOfTasks);
+  new ProjectPage(defaultProject);
+};

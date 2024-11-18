@@ -2,6 +2,7 @@ export function ProjectPage(project) {
   this.project = project;
 
   const page = document.querySelector("#content");
+  page.replaceChildren();
   const h1 = document.createElement("h1");
   h1.innerText = this.project.name;
   const p = document.createElement("p");
@@ -20,11 +21,11 @@ export function ProjectPage(project) {
   for (let i = 0; i < taskList.length; i++) {
     const element = taskList[i];
     p.innerText += element.title;
-    p.innerText += " ";
+    p.innerText += ", ";
     p.innerText += element.description;
-    p.innerText += " ";
+    p.innerText += ", ";
     p.innerText += element.dueDate;
-    p.innerText += " ";
+    p.innerText += ", ";
     p.innerText += element.priority;
     p.innerText += "\n";
     page.appendChild(p);
