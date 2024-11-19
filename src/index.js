@@ -33,17 +33,18 @@ console.log(defaultProject.name);
 console.log(defaultProject.listOfTasks);
 
 const currentProject = new ProjectPage(defaultProject);
+console.log(currentProject);
+
+document.addEventListener("keypress", function onEvent(event) {
+  if (event.key == "t") {
+    console.log("t pressed");
+    addTodo();
+  }
+});
 
 const todoButton = document.querySelector("#todo");
 todoButton.onclick = () => {
-  console.log("todoButton clicked");
-  const taskName = prompt("Please type ur shit");
-  console.log(taskName);
-  defaultProject.listOfTasks.push(
-    new TodoItem(taskName, "unspecified", "today", "mid"),
-  );
-  console.log(defaultProject.listOfTasks);
-  new ProjectPage(defaultProject);
+  addTodo();
 };
 
 const deleteButton = document.querySelector("#delete");
@@ -54,3 +55,14 @@ deleteButton.onclick = () => {
   defaultProject.listOfTasks.pop();
   new ProjectPage(defaultProject);
 };
+
+function addTodo() {
+  console.log("todoButton clicked");
+  const taskName = prompt("Please type ur shit");
+  console.log(taskName);
+  defaultProject.listOfTasks.push(
+    new TodoItem(taskName, "unspecified", "today", "mid"),
+  );
+  console.log(defaultProject.listOfTasks);
+  new ProjectPage(defaultProject);
+}
