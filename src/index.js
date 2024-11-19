@@ -42,6 +42,13 @@ document.addEventListener("keypress", function onEvent(event) {
   }
 });
 
+document.addEventListener("keypress", function onEvent(event) {
+  if (event.key == "d") {
+    console.log("d pressed");
+    deleteTask();
+  }
+});
+
 const todoButton = document.querySelector("#todo");
 todoButton.onclick = () => {
   addTask();
@@ -50,10 +57,9 @@ todoButton.onclick = () => {
 const deleteButton = document.querySelector("#delete");
 deleteButton.onclick = () => {
   console.log("deleteButton clicked");
-  // const taskName = prompt("Please type ur shit");
-  // console.log(taskName);
   defaultProject.listOfTasks.pop();
   new ProjectPage(defaultProject);
+  deleteTask();
 };
 
 function addTask() {
@@ -64,5 +70,11 @@ function addTask() {
     new TodoItem(taskName, "unspecified", "today", "mid"),
   );
   console.log(defaultProject.listOfTasks);
+  new ProjectPage(defaultProject);
+}
+
+function deleteTask() {
+  console.log("deleteButton clicked");
+  defaultProject.listOfTasks.pop();
   new ProjectPage(defaultProject);
 }
