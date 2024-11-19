@@ -54,6 +54,14 @@ use localStorage for now
 
 # TODO
 
+- TODO: Rename todo -> task
+- TODO: Split ProjectView into FocusedProjectView + GlobalProjectView
+- TODO: Create alt. constructors for tasks/todos (taking fewer/more params)
+- TODO: Create IndividualTaskView
+- TODO: Add abiltiy to delete tasks
+- TODO: Implement localStorage
+- TODO: Create sidebar for listing all projects
+
 # js filetree..
 
 project.js // project object containing todos
