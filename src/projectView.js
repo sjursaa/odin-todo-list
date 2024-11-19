@@ -5,13 +5,22 @@ export function ProjectPage(project) {
   page.replaceChildren();
   const h1 = document.createElement("h1");
   h1.innerText = this.project.name;
-  const p = document.createElement("p");
+  const table = document.createElement("table");
+  let row = table.insertRow(0);
+
+  let cell1 = row.insertCell(0);
+  let cell2 = row.insertCell(1);
+  let cell3 = row.insertCell(2);
+
+  cell1.innerText = "task";
+  cell2.innerText = "dueDate";
+  cell3.innerText = "priority";
 
   let taskList = this.project.listOfTasks;
   console.log(taskList);
   console.log("elements dropping");
-  let string;
   page.appendChild(h1);
+  page.appendChild(table);
   // TODO: Display contents in a table instead of as strings
   // TODO: Add ability to move todo to different project
   // TODO: Add checkbutton to mark as complete
@@ -20,15 +29,16 @@ export function ProjectPage(project) {
   // TODO: Add to click on a todo, for more details
   for (let i = 0; i < taskList.length; i++) {
     const element = taskList[i];
-    p.innerText += element.title;
-    p.innerText += ", ";
-    p.innerText += element.description;
-    p.innerText += ", ";
-    p.innerText += element.dueDate;
-    p.innerText += ", ";
-    p.innerText += element.priority;
-    p.innerText += "\n";
-    page.appendChild(p);
+
+    let row = table.insertRow();
+
+    let cell1 = row.insertCell(0);
+    let cell2 = row.insertCell(1);
+    let cell3 = row.insertCell(2);
+
+    cell1.innerText = element.title;
+    cell2.innerText = element.dueDate;
+    cell3.innerText = element.priority;
   }
 
   console.log("appending stuff");
