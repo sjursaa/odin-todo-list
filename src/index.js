@@ -45,3 +45,12 @@ todoButton.onclick = () => {
   console.log(defaultProject.listOfTasks);
   new ProjectPage(defaultProject);
 };
+
+const deleteButton = document.querySelector("#delete");
+deleteButton.onclick = () => {
+  console.log("deleteButton clicked");
+  // const taskName = prompt("Please type ur shit");
+  // console.log(taskName);
+  defaultProject.listOfTasks.pop();
+  new ProjectPage(defaultProject);
+};
