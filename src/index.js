@@ -39,7 +39,9 @@ todoButton.onclick = () => {
   console.log("todoButton clicked");
   const taskName = prompt("Please type ur shit");
   console.log(taskName);
-  defaultProject.listOfTasks.push(new TodoItem(taskName));
+  defaultProject.listOfTasks.push(
+    new TodoItem(taskName, "unspecified", "today", "mid"),
+  );
   console.log(defaultProject.listOfTasks);
   new ProjectPage(defaultProject);
 };
