@@ -38,13 +38,13 @@ console.log(currentProject);
 document.addEventListener("keypress", function onEvent(event) {
   if (event.key == "t") {
     console.log("t pressed");
-    addTodo();
+    addTask();
   }
 });
 
 const todoButton = document.querySelector("#todo");
 todoButton.onclick = () => {
-  addTodo();
+  addTask();
 };
 
 const deleteButton = document.querySelector("#delete");
@@ -56,7 +56,7 @@ deleteButton.onclick = () => {
   new ProjectPage(defaultProject);
 };
 
-function addTodo() {
+function addTask() {
   console.log("todoButton clicked");
   const taskName = prompt("Please type ur shit");
   console.log(taskName);
