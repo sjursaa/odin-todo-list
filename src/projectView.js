@@ -9,6 +9,7 @@ export function ProjectPage(project) {
   let row = table.insertRow(0);
 
   let cell1 = row.insertCell(0);
+  cell1.setAttribute("width", "400px");
   let cell2 = row.insertCell(1);
   let cell3 = row.insertCell(2);
 
@@ -22,7 +23,7 @@ export function ProjectPage(project) {
   page.appendChild(h1);
   page.appendChild(table);
   // TODO: Display contents in a table instead of as strings
-  // TODO: Add ability to move todo to different project
+  // TODO: Add ability to move todo to different project (elsewhere)
   // TODO: Add checkbutton to mark as complete
   // TODO: Add ability to update priority (low/mid/high)
   // TODO: Add ability to change dueDate
