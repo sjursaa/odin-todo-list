@@ -3,6 +3,7 @@ import { TodoItem } from "./todo.js";
 import { Project } from "./project.js";
 import { ProjectPage } from "./projectView.js";
 
+// main stuff
 const task1 = new TodoItem(
   "mow lawn",
   "yardwork type thing",
@@ -21,7 +22,8 @@ const task3 = new TodoItem(
   "next year",
   "low",
 );
-const defaultProject = new Project("default", [task1, task2, task3]);
+
+const defaultProject = new Project("Inbox", [task1, task2, task3]);
 const project2 = new Project("project2", [task1, task2]);
 
 console.log("hello");
@@ -35,6 +37,7 @@ console.log(defaultProject.listOfTasks);
 const currentProject = new ProjectPage(defaultProject);
 console.log(currentProject);
 
+// EventListeners keystrokes
 document.addEventListener("keypress", function onEvent(event) {
   if (event.key == "t") {
     console.log("t pressed");
@@ -49,6 +52,7 @@ document.addEventListener("keypress", function onEvent(event) {
   }
 });
 
+// EventListeners buttons
 const todoButton = document.querySelector("#todo");
 todoButton.onclick = () => {
   addTask();
@@ -56,13 +60,12 @@ todoButton.onclick = () => {
 
 const deleteButton = document.querySelector("#delete");
 deleteButton.onclick = () => {
-  console.log("deleteButton clicked");
-  defaultProject.listOfTasks.pop();
-  new ProjectPage(defaultProject);
   deleteTask();
 };
 
+// Functions
 function addTask() {
+  // TODO: update to make currentProject variable
   console.log("todoButton clicked");
   const taskName = prompt("Please type ur shit");
   console.log(taskName);
@@ -74,6 +77,7 @@ function addTask() {
 }
 
 function deleteTask() {
+  // TODO: update to pop specific/focused task
   console.log("deleteButton clicked");
   defaultProject.listOfTasks.pop();
   new ProjectPage(defaultProject);
