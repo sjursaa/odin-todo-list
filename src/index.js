@@ -25,6 +25,10 @@ const task3 = new TodoItem(
 
 // TODO: add defaultProject to localStorage
 const defaultProject = new Project("Inbox", [task1, task2, task3]);
+// localStorage.setItem(0, defaultProject.toString());
+localStorage.setItem(1, task1);
+localStorage.setItem(2, task1);
+localStorage.setItem(3, task1);
 const project2 = new Project("project2", [task1, task2]);
 
 console.log("hello");
@@ -53,6 +57,13 @@ document.addEventListener("keypress", function onEvent(event) {
   }
 });
 
+document.addEventListener("keypress", function onEvent(event) {
+  if (event.key == "l") {
+    console.log("l pressed");
+    loadTasks();
+  }
+});
+
 // EventListeners buttons
 const todoButton = document.querySelector("#todo");
 todoButton.onclick = () => {
@@ -75,8 +86,10 @@ function addTask() {
   );
   console.log(defaultProject.listOfTasks);
   new ProjectPage(defaultProject);
+
   const index = defaultProject.listOfTasks.length;
-  localStorage.setItem(index, taskName);
+  const string = taskName + ", unspecified, today, mid, " + defaultProject.name;
+  localStorage.setItem(index, string);
 }
 
 function deleteTask() {
@@ -86,4 +99,12 @@ function deleteTask() {
   defaultProject.listOfTasks.pop();
   new ProjectPage(defaultProject);
   localStorage.removeItem(index);
+}
+
+function loadTasks() {
+  // TODO: Instansiate objects from here
+  for (let i = 1; i <= localStorage.length; i++) {
+    const element = localStorage.getItem(i);
+    console.log(i + element);
+  }
 }
