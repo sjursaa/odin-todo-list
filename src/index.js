@@ -23,6 +23,7 @@ const task3 = new TodoItem(
   "low",
 );
 
+// TODO: add defaultProject to localStorage
 const defaultProject = new Project("Inbox", [task1, task2, task3]);
 const project2 = new Project("project2", [task1, task2]);
 
@@ -74,11 +75,15 @@ function addTask() {
   );
   console.log(defaultProject.listOfTasks);
   new ProjectPage(defaultProject);
+  const index = defaultProject.listOfTasks.length;
+  localStorage.setItem(index, taskName);
 }
 
 function deleteTask() {
   // TODO: update to pop specific/focused task
   console.log("deleteButton clicked");
+  const index = defaultProject.listOfTasks.length;
   defaultProject.listOfTasks.pop();
   new ProjectPage(defaultProject);
+  localStorage.removeItem(index);
 }
