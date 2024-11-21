@@ -5,5 +5,15 @@ export function TodoItem(title, description, dueDate, priority) {
   this.description = description;
   this.dueDate = dueDate;
   this.priority = priority;
-  // return "hello";
+  this.getObjectAsString = function() {
+    return (
+      this.title +
+      ", " +
+      this.description +
+      ", " +
+      this.dueDate +
+      ", " +
+      this.priority
+    );
+  };
 }

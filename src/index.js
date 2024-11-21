@@ -29,9 +29,18 @@ function populateExampleData() {
 
   // TODO: add defaultProject to localStorage
   // localStorage.setItem(0, defaultProject.toString());
-  localStorage.setItem(localStorage.length + 1, task1);
-  localStorage.setItem(localStorage.length + 1, task2);
-  localStorage.setItem(localStorage.length + 1, task3);
+  localStorage.setItem(
+    localStorage.length + 1,
+    task1.getObjectAsString() + ", " + defaultProject.name,
+  );
+  localStorage.setItem(
+    localStorage.length + 1,
+    task2.getObjectAsString() + ", " + defaultProject.name,
+  );
+  localStorage.setItem(
+    localStorage.length + 1,
+    task3.getObjectAsString() + ", " + defaultProject.name,
+  );
   // const project2 = new Project("project2", [task1, task2]);
   defaultProject.listOfTasks.push(task1);
   defaultProject.listOfTasks.push(task2);
